@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Privacy Plus",
+    "version": "1.0.0",
+    "icons": {
+        "128": "./dist/logo.png"
+    },
+
+    "browser_action": {
+        "default-icon": "./dist/logo.png",
+        "default_popup": "./dist/popup2.html"
+    },
+    "permissions": [
+        "activeTab",
+        "<all_urls>", "tabs"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": ["./src/text.js", "./src/solid-mustafa/getProfile.js", "./src/solid-mustafa/login.js"],
+        "web-accesible_resources": [
+            "./src/ads/*.jpg"
+        ]
+    }],
+    "background": {
+        "scripts": ["./src/background.js"]
+    }
+
+
+
+
+}
